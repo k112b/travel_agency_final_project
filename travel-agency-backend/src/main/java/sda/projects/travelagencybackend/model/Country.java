@@ -5,17 +5,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name="continents")
-public class Continent {
+@Entity(name="countries")
+public class Country {
     @Id
     @GeneratedValue
     private Integer id;
 
-    @Column(name="continent_name")
+    @Column(name="country_name")
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name="continent_id")
+    private Continent continent;
 }

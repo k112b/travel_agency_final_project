@@ -1,10 +1,10 @@
 # Travel-agency-backend 
 
-## MySQL database installation isntructions.
+## MySQL database installation instructions.
 
 ### Step 1
 
-Navigate to the directory containing the file `travel-agency.sql` and connect to the MySQL server using the mysql client program, e.g.
+Navigate to the directory containing the file `travel_agency.sql` and connect to the MySQL server using the mysql client program, e.g.
 ```
 mysqlsh -u root -p --sql
 ```
@@ -13,7 +13,7 @@ mysqlsh -u root -p --sql
 
 Create the database using the `source` command:
 ```
-source travel-agency.sql
+source travel_agency.sql
 ```
 
 ### Step 3
@@ -21,5 +21,5 @@ source travel-agency.sql
 Create user and grant access on the created database:
 ```
 CREATE USER 'agency_user' IDENTIFIED BY 'agency_pass';
-GRANT ALL on travel-agency.* TO 'agency_user';
+GRANT ALL on travel_agency.* TO 'agency_user';
 ```
