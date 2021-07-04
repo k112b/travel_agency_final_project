@@ -32,6 +32,13 @@ CREATE TABLE `hotels` (
    FOREIGN KEY (`city_id`) REFERENCES `cities`(`id`)
 );
 
+CREATE TABLE `airports` (
+   `id` INT AUTO_INCREMENT PRIMARY KEY,
+   `name` VARCHAR(255) NOT NULL,
+   `city_id` INT,
+   FOREIGN KEY (`city_id`) REFERENCES `cities`(`id`)
+);
+
 INSERT INTO continents(continent_name)
 VALUES('Africa'),
       ('Asia'),
