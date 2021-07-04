@@ -39,6 +39,11 @@ CREATE TABLE `airports` (
    FOREIGN KEY (`city_id`) REFERENCES `cities`(`id`)
 );
 
+CREATE TABLE `board_basis_types` (
+   `id` INT AUTO_INCREMENT PRIMARY KEY,
+   `type_string` VARCHAR(255)
+);
+
 INSERT INTO continents(continent_name)
 VALUES('Africa'),
       ('Asia'),
@@ -62,6 +67,13 @@ VALUES('Tallinn', 1),
 INSERT INTO hotels(number_of_stars, name, description, city_id)
 VALUES(1, 'Some hotel in Tallinn', '', 1),
       (2, 'Some hotel in Helsinki', '', 2);
+
+INSERT INTO board_basis_types(type_string)
+VALUES('RO'),
+      ('BB'),
+      ('HB'),
+      ('FB'),
+      ('AI');
 
 -- CREATE USER 'agency_user' IDENTIFIED BY 'agency_pass';
 -- GRANT ALL on travel_agency.* TO 'agency_user';
