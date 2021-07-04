@@ -23,6 +23,15 @@ CREATE TABLE `cities` (
    FOREIGN KEY (`country_id`) REFERENCES `countries`(`id`)
 );
 
+CREATE TABLE `hotels` (
+   `id` INT AUTO_INCREMENT PRIMARY KEY,
+   `number_of_stars` INT NOT NULL,
+   `name` VARCHAR(255) NOT NULL,
+   `description` VARCHAR(255) NOT NULL,
+   `city_id` INT,
+   FOREIGN KEY (`city_id`) REFERENCES `cities`(`id`)
+);
+
 INSERT INTO continents(continent_name)
 VALUES('Africa'),
       ('Asia'),
@@ -42,6 +51,10 @@ VALUES('Estonia', 3),
 INSERT INTO cities(city_name, country_id)
 VALUES('Tallinn', 1),
       ('Helsinki', 2);
+
+INSERT INTO hotels(number_of_stars, name, description, city_id)
+VALUES(1, 'Some hotel in Tallinn', '', 1),
+      (2, 'Some hotel in Helsinki', '', 2);
 
 -- CREATE USER 'agency_user' IDENTIFIED BY 'agency_pass';
 -- GRANT ALL on travel_agency.* TO 'agency_user';

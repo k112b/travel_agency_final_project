@@ -9,12 +9,22 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name="continents")
-public class Continent {
+@Entity(name="hotels")
+public class Hotel {
    @Id
    @GeneratedValue
    private Integer id;
 
-   @Column(name="continent_name")
+   @Column(name="number_of_stars")
+   private Integer numberOfStars;
+
+   @Column(name="name")
    private String name;
+
+   @Column(name="description")
+   private String description;
+
+   @ManyToOne
+   @JoinColumn(name="city_id")
+   private City city;
 }
